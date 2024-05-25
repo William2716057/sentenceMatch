@@ -7,7 +7,8 @@ const questions = [
     { question: "no", answer: "no" }
 ];
 
-let currentQuestionIndex = Math.floor(Math.random() * questions.length);;
+let questionCount = 0;
+const maxQuestions = 7;
 
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answer');
@@ -15,8 +16,9 @@ const submitButton = document.getElementById('submit');
 const resultElement = document.getElementById('result');
 
 function loadQuestion() {
-    if (currentQuestionIndex < questions.length) {
-        questionElement.textContent = questions[currentQuestionIndex].question;
+    if (questionCount < maxQuestions) {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        questionElement.textContent = questions[randomIndex].question;
         answerElement.value = '';
         resultElement.textContent = '';
     } else {
@@ -29,17 +31,19 @@ function loadQuestion() {
 
 submitButton.addEventListener('click', () => {
     const userAnswer = answerElement.value.trim().toLowerCase();
-    const correctAnswer = questions[currentQuestionIndex].answer;
+    const currentQuestionText = questionElement.textContent;
+    const currentQuestion = questions.find(q => q.question === currentQuestionText);
+    const correctAnswer = currentQuestion.answer;
 
     if (userAnswer === correctAnswer) {
         resultElement.textContent = 'Correct!';
         resultElement.style.color = 'green';
-        currentQuestionIndex++;
     } else {
         resultElement.textContent = `Wrong! The correct answer is '${correctAnswer}'.`;
         resultElement.style.color = 'red';
     }
 
+    questionCount++;
     setTimeout(loadQuestion, 2000);
 });
 
