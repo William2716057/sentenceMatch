@@ -3,7 +3,7 @@ const questions = [
     { question: "goodbye?", answer: "adios" },
     { question: "please", answer: "por favor" },
     { question: "thank you", answer: "gracias" },
-    { question: "yes?", answer: "sí" },
+    { question: "yes?", answer: "si" },
     { question: "no", answer: "no" }
 ];
 
