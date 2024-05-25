@@ -1,10 +1,10 @@
 const questions = [
-    { question: "Hello", answer: "hola" },
-    { question: "goodbye?", answer: "adios" },
-    { question: "please", answer: "por favor" },
-    { question: "thank you", answer: "gracias" },
-    { question: "yes?", answer: "si" },
-    { question: "no", answer: "no" }
+    { question: "Hello", answer: "hola", sound: "hola.mp3" },
+    { question: "goodbye?", answer: "adios", sound: "adios.mp3" },
+    { question: "please", answer: "por favor", sound: "por_favor.mp3" },
+    { question: "thank you", answer: "gracias", sound: "gracias.mp3" },
+    { question: "yes?", answer: "si", sound: "si.mp3" },
+    { question: "no", answer: "no", sound: "no.mp3" }
 ];
 
 let questionCount = 0;
@@ -34,10 +34,14 @@ submitButton.addEventListener('click', () => {
     const currentQuestionText = questionElement.textContent;
     const currentQuestion = questions.find(q => q.question === currentQuestionText);
     const correctAnswer = currentQuestion.answer;
+    const correctAnswerSound = currentQuestion.sound;
 
     if (userAnswer === correctAnswer) {
         resultElement.textContent = 'Correct!';
         resultElement.style.color = 'green';
+
+        const audio = new Audio(correctAnswerSound);
+        audio.play();
     } else {
         resultElement.textContent = `Wrong! The correct answer is '${correctAnswer}'.`;
         resultElement.style.color = 'red';
