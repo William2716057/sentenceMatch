@@ -7,7 +7,7 @@ const questions = [
     { question: "no", answer: "no" }
 ];
 
-let currentQuestionIndex = 0;
+let currentQuestionIndex = Math.floor(Math.random() * questions.length);;
 
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answer');
