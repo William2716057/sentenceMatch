@@ -1,0 +1,3 @@
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sentenceMatch\sentenceMatch\obj\Debug\sentenceMatch.njsproj.AssemblyReference.cache
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sentenceMatch\sentenceMatch\obj\Debug\sentenceMatch.njsproj.CoreCompileInputs.cache
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sentenceMatch\sentenceMatch\bin\Microsoft.NodejsTools.WebRole.dll
