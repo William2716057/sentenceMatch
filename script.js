@@ -6,7 +6,9 @@ const questions = [
     { question: "yes?", answer: "si", sound: "si.mp3" },
     { question: "no", answer: "no", sound: "no.mp3" }
 ];
-
+//add score counter
+//add score saver
+//sound only version
 let questionCount = 0;
 const maxQuestions = 7;
 
@@ -23,7 +25,6 @@ function updateCountdown() {
         answerElement.style.display = 'none';
         submitButton.style.display = 'none';
         resultElement.textContent = 'Game over!';
-        //document.getElementById('timer').innerHTML = 'Time up!';
         return;
     }
 
