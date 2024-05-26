@@ -19,7 +19,11 @@ function updateCountdown() {
     //Check if countdown has ended
     if (timeRemaining <= 0) {
         clearInterval(timerInterval);
-        document.getElementById('timer').innerHTML = 'Time up!';
+        questionElement.textContent = 'time up!';
+        answerElement.style.display = 'none';
+        submitButton.style.display = 'none';
+        resultElement.textContent = 'Game over!';
+        //document.getElementById('timer').innerHTML = 'Time up!';
         return;
     }
 
